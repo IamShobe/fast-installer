@@ -36,7 +36,7 @@ options:
 
 Key                 | Type        | Is Required |  Comments
 :-----------:       |:-----------:|:-----------:|:---------:
-options             | list        |    yes      |  list of dictionaries of [option](#option)s
+options             | list        |    yes      |  list of [option](#option)s
 
 
 #### option
@@ -46,7 +46,7 @@ Key          | Type        | Is Required |  Comments
 :-----------:|:-----------:|:-----------:|:---------:
 description  | string      |    yes      |
 key          | string      |    yes      |
-steps        | list        |    yes      |  list of dictionaries of [step](#step)
+steps        | list        |    yes      |  list of [step](#step)s
 
 
 #### step
