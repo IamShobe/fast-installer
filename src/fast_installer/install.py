@@ -65,14 +65,27 @@ def install(args):
                   f"{step.description}")
             for key, handler in CONFIG_TO_HANDLER.items():
                 if hasattr(step, key):
-                    handler(base_dir,
+                    try:
+                        should_continue, error_message = handler(base_dir,
                             getattr(step, key), args=args, counter=counter)
+
+                    except Exception as e:
+                        should_continue = False
+                        error_message = str(e)
+
+                    if not should_continue:
+                        print(f"{Colors.FAIL}Failed!{Colors.ENDC}")
+                        if error_message:
+                            print(f"{Colors.FAIL}{error_message}{Colors.ENDC}")
+                        return
 
             print(f"- Done step {1 + index}/{total_steps} - "
                   f"{Colors.OKGREEN}"
                   f"successes: {counter['ok']}"
                   f"{Colors.ENDC}, {Colors.WARNING}"
                   f"warnings: {counter['warnings']}"
+                  f"{Colors.ENDC}, {Colors.FAIL}"
+                  f"errors: {counter['errors']}"
                   f"{Colors.ENDC}")
             if counter['warnings'] > 0:
                 print(f"{Colors.WARNING}"

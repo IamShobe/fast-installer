@@ -63,10 +63,11 @@ The steps will be run from the first to the last.
 #### step
 a dictionary with the following keys:
 
-Key            | Type        | Is Required |  Comments
-:-----------:  |:-----------:|:-----------:|:---------:
-description    | string      |    yes      |
-[links](#links)| dictionary  |    no       |   make a soft link
+Key            | Type              | Is Required |  Comments
+:-----------:  |:-----------:      |:-----------:|:---------:
+description    | string            |    yes      |
+[links](#links)| dictionary        |    no       |   make a soft link
+[shell](#shell)| dictionary/string | no          | execute shell command
 
 
 #### links
@@ -77,3 +78,15 @@ a dictionary where the key is the dest soft link location and value is the sourc
 links:
   ~/.zshrc.d: assets/zsh/zshrc.d/
 ```
+
+#### shell
+execute a shell command.
+can be either a string (which is the shell command to be executed).
+or a dictionary:
+
+Key            | Type              | Is Required |  Comments
+:-----------:  |:-----------:      |:-----------:|:---------:
+command        | string            |    yes      |   command to be executed
+allow_fail     | bool              |    no       |   allow command to fail - default True
+timeout        | int               |    no       |   timeout for the command - default 10 seconds
+

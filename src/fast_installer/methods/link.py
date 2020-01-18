@@ -37,3 +37,4 @@ def make_links(base_dir, links, args, counter=None):
         if counter is not None:
             counter["ok"] += 1
 
+    return True, ""
