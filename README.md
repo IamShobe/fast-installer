@@ -3,7 +3,24 @@ fast-installer
 
 make fast install configurations using config file:
 
-Example:
+
+## Install
+```bash
+pip3 install fast-installer
+```
+
+
+## Usage
+
+cli:
+```bash
+fastinstall  # this will run current directory config.yaml file.
+```
+
+
+## config file
+
+### Example
 ```yaml
 options:
   - description: "Zsh configurations"
@@ -15,17 +32,14 @@ options:
           ~/.zshrc: assets/zsh/zshrc
 ```
 
-
-## config file
-
-Base structure:
+### Structure
 
 Key                 | Type        | Is Required |  Comments
 :-----------:       |:-----------:|:-----------:|:---------:
 options             | list        |    yes      |  list of dictionaries of [option](#option)s
 
 
-### option
+#### option
 a dictionary with the following keys:
 
 Key          | Type        | Is Required |  Comments
@@ -35,7 +49,7 @@ key          | string      |    yes      |
 steps        | list        |    yes      |  list of dictionaries of [step](#step)
 
 
-### step
+#### step
 a dictionary with the following keys:
 
 Key            | Type        | Is Required |  Comments
@@ -44,10 +58,10 @@ description    | string      |    yes      |
 [links](#links)| dictionary  |    no       |   make a soft link
 
 
-### links
+#### links
 a dictionary where the key is the dest soft link location and value is the source location.
 
-example:
+##### Example
 ```yaml
 links:
   ~/.zshrc.d: assets/zsh/zshrc.d/
