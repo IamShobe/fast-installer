@@ -5,6 +5,7 @@ install.py [options]
 
 -a --all                    install all in config.
 -f --force                  force linking new paths [default: False].
+-s --safe                   stop at a warning.
 --config=<config_path>      config file of the install script [default: config.yaml].
 --base-dir=<base_dir>       base directory of all assets [default: .].
 """
@@ -22,6 +23,12 @@ from .methods.utils import Colors
 
 
 def get_config(path):
+    if not os.path.exists(path):
+        print(f"{Colors.FAIL}"
+              f"Config file not found: `{path}`!"
+              f"{Colors.ENDC}")
+        os._exit(1)
+
     with open(path) as config_f:
         return AttrDict(yaml.load(config_f))
 
@@ -91,6 +98,8 @@ def install(args):
                 print(f"{Colors.WARNING}"
                       f"***Try running with -f to force install***"
                       f"{Colors.ENDC}")
+                if args["--safe"]:
+                    return
 
     print(f"{Colors.fg.green}Done!{Colors.ENDC}")
 
