@@ -16,6 +16,7 @@ with open(os.path.join(BASE_DIR, 'README.md'), encoding='utf-8') as f:
 setup(
     name="fast-installer",
     version=__version__,
+    url="https://github.com/IamShobe/fast-installer",
     description="fast pythonic installer for projects using yaml config",
     long_description=long_description,
     long_description_content_type='text/markdown',

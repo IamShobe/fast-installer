@@ -3,7 +3,7 @@ fast-installer
 
 make fast install configurations using config file:
 
-![Image](./example.PNG)
+![Image](https://github.com/IamShobe/fast-installer/blob/master/example.PNG?raw=true)
 
 ## Install
 ```bash
