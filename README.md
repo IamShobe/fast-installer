@@ -17,6 +17,16 @@ cli:
 fastinstall  # this will run current directory config.yaml file.
 ```
 
+to install all steps:
+```bash
+fastisntall -a
+```
+
+for more:
+```bash
+fastinstall -h
+```
+
 
 ## config file
 
@@ -48,6 +58,7 @@ description  | string      |    yes      |
 key          | string      |    yes      |
 steps        | list        |    yes      |  list of [step](#step)s
 
+The steps will be run from the first to the last.
 
 #### step
 a dictionary with the following keys:
