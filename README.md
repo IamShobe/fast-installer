@@ -45,7 +45,7 @@ options:
 ### Structure
 
 Key                 | Type        | Is Required |  Comments
-:-----------:       |:-----------:|:-----------:|:---------:
+:-----------:       |:-----------:|:-----------:|:---------
 options             | list        |    yes      |  list of [option](#option)s
 
 
@@ -53,7 +53,7 @@ options             | list        |    yes      |  list of [option](#option)s
 a dictionary with the following keys:
 
 Key          | Type        | Is Required |  Comments
-:-----------:|:-----------:|:-----------:|:---------:
+:-----------:|:-----------:|:-----------:|:---------
 description  | string      |    yes      |
 key          | string      |    yes      |
 steps        | list        |    yes      |  list of [step](#step)s
@@ -64,7 +64,7 @@ The steps will be run from the first to the last.
 a dictionary with the following keys:
 
 Key            | Type              | Is Required |  Comments
-:-----------:  |:-----------:      |:-----------:|:---------:
+:-----------:  |:-----------:      |:-----------:|:---------
 description    | string            |    yes      |
 [links](#links)| dictionary        |    no       |   make a soft link
 [shell](#shell)| dictionary/string | no          | execute shell command
@@ -85,7 +85,7 @@ can be either a string (which is the shell command to be executed).
 or a dictionary:
 
 Key            | Type              | Is Required |  Comments
-:-----------:  |:-----------:      |:-----------:|:---------:
+:-----------:  |:-----------:      |:-----------:|:---------
 command        | string            |    yes      |   command to be executed
 allow_fail     | bool              |    no       |   allow command to fail - default True
 timeout        | int               |    no       |   timeout for the command - default 10 seconds
