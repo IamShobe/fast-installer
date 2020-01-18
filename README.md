@@ -40,6 +40,13 @@ options:
         links:
           ~/.zshrc.d: assets/zsh/zshrc.d/
           ~/.zshrc: assets/zsh/zshrc
+        shell:
+          - echo "test"
+          - command: ls not_exists
+            allow_fail: true
+          - command: tail -f /dev/null
+            allow_fail: true
+            timeout: 1  # 1 seconds           
 ```
 
 ### Structure
