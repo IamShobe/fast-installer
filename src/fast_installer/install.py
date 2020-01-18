@@ -6,7 +6,7 @@ install.py [options]
 -a --all                    install all in config.
 -f --force                  force linking new paths [default: False].
 --config=<config_path>      config file of the install script [default: config.yaml].
---base-dir=<base_dir>       base directory of all assets.
+--base-dir=<base_dir>       base directory of all assets [default: .].
 """
 import os
 from collections import Counter
@@ -19,8 +19,6 @@ from attrdict import AttrDict
 
 from .methods import CONFIG_TO_HANDLER
 from .methods.utils import Colors
-
-BASE_DIR = os.getcwd()
 
 
 def get_config(path):
@@ -54,9 +52,7 @@ def install(args):
     else:
         options = get_filtered_options(config.options)
 
-    base_dir = args["--base-dir"]
-    if base_dir is None:
-        base_dir = BASE_DIR
+    base_dir = os.path.abspath(args["--base-dir"])
 
     for setting_index, setting in enumerate(options):
         total_steps = len(setting.steps)
