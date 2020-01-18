@@ -54,7 +54,7 @@ def install(args):
 
     base_dir = os.path.abspath(args["--base-dir"])
 
-    for setting_index, setting in enumerate(options):
+    for setting in options:
         total_steps = len(setting.steps)
         print(f"Running settings of "
               f"{Colors.fg.lightred}{setting.key}{Colors.ENDC} - "
