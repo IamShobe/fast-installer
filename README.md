@@ -3,12 +3,12 @@ fast-installer
 
 make fast install configurations using config file:
 
+![Image](./example.PNG)
 
 ## Install
 ```bash
 pip3 install fast-installer
 ```
-
 
 ## Usage
 
