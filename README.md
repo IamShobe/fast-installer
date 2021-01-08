@@ -19,7 +19,7 @@ fastinstall  # this will run current directory config.yaml file.
 
 to install all steps:
 ```bash
-fastisntall -a
+fastinstall -a
 ```
 
 for more:
